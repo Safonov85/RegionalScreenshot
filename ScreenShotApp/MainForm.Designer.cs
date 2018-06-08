@@ -34,6 +34,8 @@
 			this.QualityAmountLabel = new System.Windows.Forms.Label();
 			this.PicFormatComboBox = new System.Windows.Forms.ComboBox();
 			this.label1 = new System.Windows.Forms.Label();
+			this.saveAtLabel = new System.Windows.Forms.Label();
+			this.saveAtComboBox = new System.Windows.Forms.ComboBox();
 			((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -98,11 +100,36 @@
 			this.label1.Text = "(Quality not available for PNG)";
 			this.label1.Visible = false;
 			// 
+			// saveAtLabel
+			// 
+			this.saveAtLabel.AutoSize = true;
+			this.saveAtLabel.Location = new System.Drawing.Point(12, 119);
+			this.saveAtLabel.Name = "saveAtLabel";
+			this.saveAtLabel.Size = new System.Drawing.Size(49, 13);
+			this.saveAtLabel.TabIndex = 6;
+			this.saveAtLabel.Text = "Save @:";
+			// 
+			// saveAtComboBox
+			// 
+			this.saveAtComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.saveAtComboBox.FormattingEnabled = true;
+			this.saveAtComboBox.Items.AddRange(new object[] {
+            "Desktop",
+            "Pictures",
+            "Documents",
+            "Downloads"});
+			this.saveAtComboBox.Location = new System.Drawing.Point(67, 116);
+			this.saveAtComboBox.Name = "saveAtComboBox";
+			this.saveAtComboBox.Size = new System.Drawing.Size(90, 21);
+			this.saveAtComboBox.TabIndex = 7;
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(290, 111);
+			this.ClientSize = new System.Drawing.Size(290, 150);
+			this.Controls.Add(this.saveAtComboBox);
+			this.Controls.Add(this.saveAtLabel);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.PicFormatComboBox);
 			this.Controls.Add(this.QualityAmountLabel);
@@ -130,6 +157,8 @@
 		private System.Windows.Forms.Label QualityAmountLabel;
 		private System.Windows.Forms.ComboBox PicFormatComboBox;
 		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label saveAtLabel;
+		private System.Windows.Forms.ComboBox saveAtComboBox;
 	}
 }
 

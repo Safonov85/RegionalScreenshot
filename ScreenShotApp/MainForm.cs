@@ -11,6 +11,7 @@ namespace RegionalScreenshot
 		{
 			InitializeComponent();
 			PicFormatComboBox.SelectedIndex = 0;
+			saveAtComboBox.SelectedIndex = 0;
 		}
 
 		private void TakeSSButton_Click(object sender, EventArgs e)

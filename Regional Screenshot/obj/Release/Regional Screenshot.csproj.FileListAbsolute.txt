@@ -1,8 +1,0 @@
-C:\Users\MinDator\documents\visual studio 2015\Projects\ScreenShotApp\ScreenShotApp\bin\Release\Regional Screenshot.exe.config
-C:\Users\MinDator\documents\visual studio 2015\Projects\ScreenShotApp\ScreenShotApp\bin\Release\Regional Screenshot.exe
-C:\Users\MinDator\documents\visual studio 2015\Projects\ScreenShotApp\ScreenShotApp\bin\Release\Regional Screenshot.pdb
-C:\Users\MinDator\documents\visual studio 2015\Projects\ScreenShotApp\ScreenShotApp\obj\Release\RegionalScreenshot.MainForm.resources
-C:\Users\MinDator\documents\visual studio 2015\Projects\ScreenShotApp\ScreenShotApp\obj\Release\RegionalScreeshot.Properties.Resources.resources
-C:\Users\MinDator\documents\visual studio 2015\Projects\ScreenShotApp\ScreenShotApp\obj\Release\Regional Screenshot.csproj.GenerateResource.Cache
-C:\Users\MinDator\documents\visual studio 2015\Projects\ScreenShotApp\ScreenShotApp\obj\Release\Regional Screenshot.exe
-C:\Users\MinDator\documents\visual studio 2015\Projects\ScreenShotApp\ScreenShotApp\obj\Release\Regional Screenshot.pdb
