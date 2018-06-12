@@ -103,7 +103,7 @@
 			// saveAtLabel
 			// 
 			this.saveAtLabel.AutoSize = true;
-			this.saveAtLabel.Location = new System.Drawing.Point(12, 119);
+			this.saveAtLabel.Location = new System.Drawing.Point(129, 116);
 			this.saveAtLabel.Name = "saveAtLabel";
 			this.saveAtLabel.Size = new System.Drawing.Size(49, 13);
 			this.saveAtLabel.TabIndex = 6;
@@ -118,10 +118,11 @@
             "Pictures",
             "Documents",
             "Downloads"});
-			this.saveAtComboBox.Location = new System.Drawing.Point(67, 116);
+			this.saveAtComboBox.Location = new System.Drawing.Point(184, 113);
 			this.saveAtComboBox.Name = "saveAtComboBox";
 			this.saveAtComboBox.Size = new System.Drawing.Size(90, 21);
 			this.saveAtComboBox.TabIndex = 7;
+			this.saveAtComboBox.SelectedIndexChanged += new System.EventHandler(this.saveAtComboBox_SelectedIndexChanged);
 			// 
 			// MainForm
 			// 

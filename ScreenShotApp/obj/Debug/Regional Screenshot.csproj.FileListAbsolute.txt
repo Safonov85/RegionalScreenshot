@@ -7,3 +7,12 @@ C:\Users\MinDator\documents\visual studio 2015\Projects\ScreenShotApp\ScreenShot
 C:\Users\MinDator\documents\visual studio 2015\Projects\ScreenShotApp\ScreenShotApp\obj\Debug\Regional Screenshot.exe
 C:\Users\MinDator\documents\visual studio 2015\Projects\ScreenShotApp\ScreenShotApp\obj\Debug\Regional Screenshot.pdb
 C:\Users\MinDator\documents\visual studio 2015\Projects\ScreenShotApp\ScreenShotApp\obj\Debug\RegionalScreenshot.MainForm.resources
+C:\Users\MinDator\Documents\Visual Studio 2015\Projects\RegionalScreenshot\ScreenShotApp\bin\Debug\Regional Screenshot.exe.config
+C:\Users\MinDator\Documents\Visual Studio 2015\Projects\RegionalScreenshot\ScreenShotApp\obj\Debug\Regional Screenshot.exe
+C:\Users\MinDator\Documents\Visual Studio 2015\Projects\RegionalScreenshot\ScreenShotApp\obj\Debug\Regional Screenshot.pdb
+C:\Users\MinDator\Documents\Visual Studio 2015\Projects\RegionalScreenshot\ScreenShotApp\bin\Debug\Regional Screenshot.exe
+C:\Users\MinDator\Documents\Visual Studio 2015\Projects\RegionalScreenshot\ScreenShotApp\bin\Debug\Regional Screenshot.pdb
+C:\Users\MinDator\Documents\Visual Studio 2015\Projects\RegionalScreenshot\ScreenShotApp\obj\Debug\Regional Screenshot.csprojResolveAssemblyReference.cache
+C:\Users\MinDator\Documents\Visual Studio 2015\Projects\RegionalScreenshot\ScreenShotApp\obj\Debug\RegionalScreenshot.MainForm.resources
+C:\Users\MinDator\Documents\Visual Studio 2015\Projects\RegionalScreenshot\ScreenShotApp\obj\Debug\RegionalScreeshot.Properties.Resources.resources
+C:\Users\MinDator\Documents\Visual Studio 2015\Projects\RegionalScreenshot\ScreenShotApp\obj\Debug\Regional Screenshot.csproj.GenerateResource.Cache

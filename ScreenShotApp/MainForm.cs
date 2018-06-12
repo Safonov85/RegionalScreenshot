@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace RegionalScreenshot
@@ -49,13 +50,53 @@ namespace RegionalScreenshot
 		// for picture format (JPG or PNG)
 		private void PicFormatComboBox_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			if(PicFormatComboBox.SelectedItem == ".png")
+			if(PicFormatComboBox.SelectedItem.ToString() == ".png")
 			{
 				label1.Visible = true;
 			}
 			else
 			{
 				label1.Visible = false;
+			}
+		}
+
+		private void saveAtComboBox_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			if (saveAtComboBox.SelectedItem.ToString() == "Desktop")
+			{
+				takeScreenShot.savePath = Environment.GetFolderPath(System.Environment.SpecialFolder.DesktopDirectory);
+			}
+			else if(saveAtComboBox.SelectedItem.ToString() == "Documents")
+			{
+				if (Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)))
+				{
+					takeScreenShot.savePath = Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
+				}
+				else
+				{
+					MessageBox.Show("Documents or My Documents folder doesn't exist");
+					takeScreenShot.savePath = Environment.GetFolderPath(System.Environment.SpecialFolder.DesktopDirectory);
+					saveAtComboBox.SelectedItem = "Desktop";
+				}
+			}
+			else if(saveAtComboBox.SelectedItem.ToString() == "Pictures")
+			{
+				if (Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)))
+				{
+					takeScreenShot.savePath = Environment.GetFolderPath(System.Environment.SpecialFolder.MyPictures);
+				}
+				else
+				{
+					MessageBox.Show("Pictures or My Pictures folder doesn't exist");
+					takeScreenShot.savePath = Environment.GetFolderPath(System.Environment.SpecialFolder.DesktopDirectory);
+					saveAtComboBox.SelectedItem = "Desktop";
+				}
+			}
+			else if (saveAtComboBox.SelectedItem.ToString() == "Downloads")
+			{
+				MessageBox.Show("Downloads currently unavaliable");
+				takeScreenShot.savePath = Environment.GetFolderPath(System.Environment.SpecialFolder.DesktopDirectory);
+				saveAtComboBox.SelectedItem = "Desktop";
 			}
 		}
 	}

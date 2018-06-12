@@ -15,6 +15,7 @@ namespace RegionalScreenshot
 		PictureBox pictureBox = new PictureBox();
 		public string format = ".jpg";
 		string manualTutorial = "Scroll";
+		public string savePath;
 
 		public TakeScreenShot()
 		{
@@ -30,6 +31,7 @@ namespace RegionalScreenshot
 			form.KeyPress += new KeyPressEventHandler(form_KeyPress);
 			form.KeyUp += new KeyEventHandler(form_KeyUp);
 			form.KeyPreview = true;
+			savePath = Environment.GetFolderPath(System.Environment.SpecialFolder.DesktopDirectory);
 
 			// pictureBox CLICK WORKING!!!!!!!!!!
 			pictureBox.Click += new EventHandler(picturebox_Click);
@@ -149,9 +151,7 @@ namespace RegionalScreenshot
 
 			// Crops the Exact Region
 			graphics.CopyFromScreen((int)screenStartX, (int)screenStartY, 0, 0, screen.Size);
-
-			string desktopPath = Environment.GetFolderPath(System.Environment.SpecialFolder.DesktopDirectory);
-
+			
 			if (format == ".jpg")
 			{
 				ImageCodecInfo jpgEncoder = GetEncoder(ImageFormat.Jpeg);
@@ -161,12 +161,12 @@ namespace RegionalScreenshot
 
 				EncoderParameter myEncoderParameter = new EncoderParameter(myEncoder, qualityAmount);
 				myEncoderParameters.Param[0] = myEncoderParameter;
-				screen.Save(desktopPath + "\\" + DateTime.Now.ToShortDateString() + DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() +
+				screen.Save(savePath + "\\" + DateTime.Now.ToShortDateString() + DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() +
 					DateTime.Now.Second.ToString() + "Quality_" + quality.ToString() + format, jpgEncoder, myEncoderParameters);
 			}
 			else if (format == ".png")
 			{
-				screen.Save(desktopPath + "\\" + DateTime.Now.ToShortDateString() + DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() +
+				screen.Save(savePath + "\\" + DateTime.Now.ToShortDateString() + DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() +
 					DateTime.Now.Second.ToString() + format, ImageFormat.Png);
 			}
 		}
