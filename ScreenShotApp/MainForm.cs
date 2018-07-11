@@ -94,9 +94,17 @@ namespace RegionalScreenshot
 			}
 			else if (saveAtComboBox.SelectedItem.ToString() == "Downloads")
 			{
-				MessageBox.Show("Downloads currently unavaliable");
-				takeScreenShot.savePath = Environment.GetFolderPath(System.Environment.SpecialFolder.DesktopDirectory);
-				saveAtComboBox.SelectedItem = "Desktop";
+				if (false)
+				{
+					// nuffin
+
+				}
+				else
+				{
+					MessageBox.Show("Downloads currently unavaliable");
+					takeScreenShot.savePath = Environment.GetFolderPath(System.Environment.SpecialFolder.DesktopDirectory);
+					saveAtComboBox.SelectedItem = "Desktop";
+				}
 			}
 		}
 	}
