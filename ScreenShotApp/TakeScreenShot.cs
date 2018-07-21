@@ -194,6 +194,12 @@ namespace RegionalScreenshot
 			graphics.Dispose();
 		}
 
+		void TakeScreenshotLive()
+		{
+			// Taking a screenshot without putting it on screen first,
+			// just snapping a pic while things are moving on the screen
+		}
+
 		private ImageCodecInfo GetEncoder(ImageFormat format)
 		{
 			ImageCodecInfo[] codecs = ImageCodecInfo.GetImageDecoders();
