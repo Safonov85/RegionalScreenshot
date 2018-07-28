@@ -117,7 +117,8 @@
             "Desktop",
             "Pictures",
             "Documents",
-            "Downloads"});
+            "Downloads",
+            "Other..."});
 			this.saveAtComboBox.Location = new System.Drawing.Point(184, 113);
 			this.saveAtComboBox.Name = "saveAtComboBox";
 			this.saveAtComboBox.Size = new System.Drawing.Size(90, 21);

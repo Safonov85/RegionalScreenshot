@@ -106,6 +106,25 @@ namespace RegionalScreenshot
 					saveAtComboBox.SelectedItem = "Desktop";
 				}
 			}
+			else if(saveAtComboBox.SelectedItem.ToString() == "Other...")
+			{
+				FolderBrowserDialog folderDialog = new FolderBrowserDialog();
+
+				folderDialog.ShowNewFolderButton = true;
+
+				DialogResult result = folderDialog.ShowDialog();
+
+				if(result == DialogResult.OK)
+				{
+					takeScreenShot.savePath = folderDialog.SelectedPath;
+					saveAtComboBox.SelectedItem = "Other...";
+				}
+				else
+				{
+					takeScreenShot.savePath = Environment.GetFolderPath(System.Environment.SpecialFolder.DesktopDirectory);
+					saveAtComboBox.SelectedItem = "Desktop";
+				}
+			}
 		}
 	}
 }
