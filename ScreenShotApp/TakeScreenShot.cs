@@ -23,12 +23,8 @@ namespace RegionalScreenshot
 			cursorSizeY = 400;
 			form = new Form();
 			form.MouseWheel += new MouseEventHandler(form_MouseWheel);
-			form.Click += new System.EventHandler(form_Click);
-			form.MouseClick += new System.Windows.Forms.MouseEventHandler(this.mouseClick);
-			form.MouseDown += new System.Windows.Forms.MouseEventHandler(mouseDown);
-			form.MouseUp += new System.Windows.Forms.MouseEventHandler(mouseUp);
 			form.KeyDown += new KeyEventHandler(form_KeyDown);
-			form.KeyPress += new KeyPressEventHandler(form_KeyPress);
+			form.Click += new System.EventHandler(form_Click);
 			form.KeyUp += new KeyEventHandler(form_KeyUp);
 			form.KeyPreview = true;
 			savePath = Environment.GetFolderPath(System.Environment.SpecialFolder.DesktopDirectory);
@@ -53,18 +49,6 @@ namespace RegionalScreenshot
 			}
 		}
 
-		private void mouseUp(object sender, MouseEventArgs e)
-		{
-		}
-
-		private void mouseDown(object sender, MouseEventArgs e)
-		{
-		}
-
-		private void mouseClick(object sender, MouseEventArgs e)
-		{
-		}
-
 		private void form_KeyUp(object sender, KeyEventArgs e)
 		{
 			// CTRL Down
@@ -81,9 +65,9 @@ namespace RegionalScreenshot
 			}
 		}
 
-		private void form_KeyPress(object sender, KeyPressEventArgs e)
+		private void form_Click(object sender, EventArgs e)
 		{
-
+			form.Close();
 		}
 
 		private void form_KeyDown(object sender, KeyEventArgs e)
@@ -92,11 +76,6 @@ namespace RegionalScreenshot
 			{
 				ctrlDown = true;
 			}
-		}
-
-		private void form_Click(object sender, EventArgs e)
-		{
-			form.Close();
 		}
 
 		// WORKING !!!!!!!!!!!!!!!!!
