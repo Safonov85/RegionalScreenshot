@@ -34,19 +34,6 @@ namespace RegionalScreenshot
 			QualityAmountLabel.Text = trackBar1.Value.ToString();
 		}
 
-		private void MainForm_MouseEnter(object sender, EventArgs e)
-		{
-
-		}
-
-		private void MainForm_Scroll(object sender, ScrollEventArgs e)
-		{
-		}
-
-		private void MainForm_MouseClick(object sender, MouseEventArgs e)
-		{
-		}
-
 		// for picture format (JPG or PNG)
 		private void PicFormatComboBox_SelectedIndexChanged(object sender, EventArgs e)
 		{
