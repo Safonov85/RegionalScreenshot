@@ -37,17 +37,24 @@ namespace RegionalScreenshot
 		// for picture format (JPG or PNG)
 		private void PicFormatComboBox_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			if(PicFormatComboBox.SelectedItem.ToString() == ".png")
-			{
-				label1.Visible = true;
-			}
-			else
-			{
-				label1.Visible = false;
-			}
-		}
+            if (PicFormatComboBox.SelectedItem.ToString() == ".png")
+            {
+                label1.Visible = true;
+                trackBar1.Visible = false;
+                QualityAmountLabel.Visible = false;
+                QualityLabel.Visible = false;
+            }
+            else
+            {
+                label1.Visible = false;
+                trackBar1.Visible = true;
+                QualityAmountLabel.Visible = true;
+                QualityLabel.Visible = true;
+            }
 
-		private void saveAtComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        }
+
+        private void saveAtComboBox_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			if (saveAtComboBox.SelectedItem.ToString() == "Desktop")
 			{
