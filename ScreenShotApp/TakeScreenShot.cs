@@ -14,7 +14,7 @@ namespace RegionalScreenshot
 		int cursorSizeX, cursorSizeY;
 		PictureBox pictureBox = new PictureBox();
 		public string format = ".jpg";
-		string manualTutorial = "Scroll";
+		string manualTutorial = "Scroll (or ← → ↑ ↓)";
 		public string savePath;
 
 		public TakeScreenShot()
@@ -76,7 +76,35 @@ namespace RegionalScreenshot
 			{
 				ctrlDown = true;
 			}
-		}
+            if(e.KeyData == Keys.Up)
+            {
+                cursorSizeY += 20;
+                form.Cursor = CreateCursor(cursorSizeX, cursorSizeY);
+            }
+            if (e.KeyData == Keys.Down)
+            {
+                cursorSizeY -= 20;
+                if (cursorSizeY < 20)
+                {
+                    cursorSizeY = 20;
+                }
+                form.Cursor = CreateCursor(cursorSizeX, cursorSizeY);
+            }
+            if (e.KeyData == Keys.Right)
+            {
+                cursorSizeX -= 20;
+                if (cursorSizeX < 20)
+                {
+                    cursorSizeX = 20;
+                }
+                form.Cursor = CreateCursor(cursorSizeX, cursorSizeY);
+            }
+            if (e.KeyData == Keys.Left)
+            {
+                cursorSizeX += 20;
+                form.Cursor = CreateCursor(cursorSizeX, cursorSizeY);
+            }
+        }
 
 		// WORKING !!!!!!!!!!!!!!!!!
 		private void form_MouseWheel(object sender, MouseEventArgs e)
