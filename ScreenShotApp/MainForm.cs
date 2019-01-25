@@ -13,6 +13,7 @@ namespace RegionalScreenshot
 			InitializeComponent();
 			PicFormatComboBox.SelectedIndex = 0;
 			saveAtComboBox.SelectedIndex = 0;
+            //MainForm.DefaultBackColor = Color
 		}
 
 		private void TakeSSButton_Click(object sender, EventArgs e)
