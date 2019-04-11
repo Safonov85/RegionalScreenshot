@@ -14,7 +14,7 @@ namespace RegionalScreenshot
 		int cursorSizeX, cursorSizeY;
 		PictureBox pictureBox = new PictureBox();
 		public string format = ".jpg";
-		string manualTutorial = "Scroll (or ← → ↑ ↓)";
+		string manualTutorial = "Scroll (+ Ctrl) ( ← → ↑ ↓ )";
 		public string savePath;
 
 		public TakeScreenShot()
@@ -55,7 +55,9 @@ namespace RegionalScreenshot
 			if (e.KeyCode == Keys.ControlKey)
 			{
 				ctrlDown = false;
-			}
+                manualTutorial = "Scroll ← →";
+                form.Cursor = CreateCursor(cursorSizeX, cursorSizeY);
+            }
 
 			// Esc press EXIST!!!
 			if (e.KeyCode == Keys.Escape)
@@ -75,7 +77,9 @@ namespace RegionalScreenshot
 			if (e.Control)
 			{
 				ctrlDown = true;
-			}
+                manualTutorial = "Scroll + Ctrl ↑ ↓";
+                form.Cursor = CreateCursor(cursorSizeX, cursorSizeY);
+            }
             if(e.KeyData == Keys.Up)
             {
                 cursorSizeY += 20;
@@ -109,7 +113,7 @@ namespace RegionalScreenshot
 		// WORKING !!!!!!!!!!!!!!!!!
 		private void form_MouseWheel(object sender, MouseEventArgs e)
 		{
-			manualTutorial = "Scroll + Ctrl";
+			//manualTutorial = "Scroll + Ctrl";
 			if (e.Delta == 120)
 			{
 				if (ctrlDown == false)
