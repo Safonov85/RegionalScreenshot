@@ -12,7 +12,7 @@ namespace RegionalScreenshot
 		{
 			InitializeComponent();
 			PicFormatComboBox.SelectedIndex = 0;
-			saveAtComboBox.SelectedIndex = 0;
+			saveAtComboBox.SelectedIndex = 1;
             //MainForm.DefaultBackColor = Color
 		}
 
