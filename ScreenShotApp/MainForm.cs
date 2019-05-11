@@ -38,6 +38,16 @@ namespace RegionalScreenshot
 		// for picture format (JPG or PNG)
 		private void PicFormatComboBox_SelectedIndexChanged(object sender, EventArgs e)
 		{
+            PictureFormatSelections();
+        }
+
+        private void saveAtComboBox_SelectedIndexChanged(object sender, EventArgs e)
+		{
+            ChooseSaveSelections();
+		}
+
+        void PictureFormatSelections()
+        {
             if (PicFormatComboBox.SelectedItem.ToString() == ".png")
             {
                 label1.Visible = true;
@@ -52,74 +62,73 @@ namespace RegionalScreenshot
                 QualityAmountLabel.Visible = true;
                 QualityLabel.Visible = true;
             }
-
         }
 
-        private void saveAtComboBox_SelectedIndexChanged(object sender, EventArgs e)
-		{
-			if (saveAtComboBox.SelectedItem.ToString() == "Desktop")
-			{
-				takeScreenShot.savePath = Environment.GetFolderPath(System.Environment.SpecialFolder.DesktopDirectory);
-			}
-			else if(saveAtComboBox.SelectedItem.ToString() == "Documents")
-			{
-				if (Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)))
-				{
-					takeScreenShot.savePath = Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
-				}
-				else
-				{
-					MessageBox.Show("Documents or My Documents folder doesn't exist");
-					takeScreenShot.savePath = Environment.GetFolderPath(System.Environment.SpecialFolder.DesktopDirectory);
-					saveAtComboBox.SelectedItem = "Desktop";
-				}
-			}
-			else if(saveAtComboBox.SelectedItem.ToString() == "Pictures")
-			{
-				if (Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)))
-				{
-					takeScreenShot.savePath = Environment.GetFolderPath(System.Environment.SpecialFolder.MyPictures);
-				}
-				else
-				{
-					MessageBox.Show("Pictures or My Pictures folder doesn't exist");
-					takeScreenShot.savePath = Environment.GetFolderPath(System.Environment.SpecialFolder.DesktopDirectory);
-					saveAtComboBox.SelectedItem = "Desktop";
-				}
-			}
-			else if (saveAtComboBox.SelectedItem.ToString() == "Downloads")
-			{
-				if (false)
-				{
-					// nuffin
+        private void ChooseSaveSelections()
+        {
+            if (saveAtComboBox.SelectedItem.ToString() == "Desktop")
+            {
+                takeScreenShot.savePath = Environment.GetFolderPath(System.Environment.SpecialFolder.DesktopDirectory);
+            }
+            else if (saveAtComboBox.SelectedItem.ToString() == "Documents")
+            {
+                if (Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)))
+                {
+                    takeScreenShot.savePath = Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
+                }
+                else
+                {
+                    MessageBox.Show("Documents or My Documents folder doesn't exist");
+                    takeScreenShot.savePath = Environment.GetFolderPath(System.Environment.SpecialFolder.DesktopDirectory);
+                    saveAtComboBox.SelectedItem = "Desktop";
+                }
+            }
+            else if (saveAtComboBox.SelectedItem.ToString() == "Pictures")
+            {
+                if (Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)))
+                {
+                    takeScreenShot.savePath = Environment.GetFolderPath(System.Environment.SpecialFolder.MyPictures);
+                }
+                else
+                {
+                    MessageBox.Show("Pictures or My Pictures folder doesn't exist");
+                    takeScreenShot.savePath = Environment.GetFolderPath(System.Environment.SpecialFolder.DesktopDirectory);
+                    saveAtComboBox.SelectedItem = "Desktop";
+                }
+            }
+            else if (saveAtComboBox.SelectedItem.ToString() == "Downloads")
+            {
+                if (false)
+                {
+                    // nuffin
 
-				}
-				else
-				{
-					MessageBox.Show("Downloads currently unavaliable");
-					takeScreenShot.savePath = Environment.GetFolderPath(System.Environment.SpecialFolder.DesktopDirectory);
-					saveAtComboBox.SelectedItem = "Desktop";
-				}
-			}
-			else if(saveAtComboBox.SelectedItem.ToString() == "Other...")
-			{
-				FolderBrowserDialog folderDialog = new FolderBrowserDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Downloads currently unavaliable");
+                    takeScreenShot.savePath = Environment.GetFolderPath(System.Environment.SpecialFolder.DesktopDirectory);
+                    saveAtComboBox.SelectedItem = "Desktop";
+                }
+            }
+            else if (saveAtComboBox.SelectedItem.ToString() == "Other...")
+            {
+                FolderBrowserDialog folderDialog = new FolderBrowserDialog();
 
-				folderDialog.ShowNewFolderButton = true;
+                folderDialog.ShowNewFolderButton = true;
 
-				DialogResult result = folderDialog.ShowDialog();
+                DialogResult result = folderDialog.ShowDialog();
 
-				if(result == DialogResult.OK)
-				{
-					takeScreenShot.savePath = folderDialog.SelectedPath;
-					saveAtComboBox.SelectedItem = "Other...";
-				}
-				else
-				{
-					takeScreenShot.savePath = Environment.GetFolderPath(System.Environment.SpecialFolder.DesktopDirectory);
-					saveAtComboBox.SelectedItem = "Desktop";
-				}
-			}
-		}
+                if (result == DialogResult.OK)
+                {
+                    takeScreenShot.savePath = folderDialog.SelectedPath;
+                    saveAtComboBox.SelectedItem = "Other...";
+                }
+                else
+                {
+                    takeScreenShot.savePath = Environment.GetFolderPath(System.Environment.SpecialFolder.DesktopDirectory);
+                    saveAtComboBox.SelectedItem = "Desktop";
+                }
+            }
+        }
 	}
 }
