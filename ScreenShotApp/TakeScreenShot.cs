@@ -258,6 +258,7 @@ namespace RegionalScreenshot
 			graphics.Dispose();
 		}
 
+        // Obvious
 		Cursor CreateCursor(int x, int y)
 		{
 			Bitmap image = new Bitmap(x, y);

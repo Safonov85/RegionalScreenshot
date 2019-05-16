@@ -36,6 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.saveAtLabel = new System.Windows.Forms.Label();
             this.saveAtComboBox = new System.Windows.Forms.ComboBox();
+            this.CurrentSizeLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -129,12 +130,23 @@
             this.saveAtComboBox.TabIndex = 7;
             this.saveAtComboBox.SelectedIndexChanged += new System.EventHandler(this.saveAtComboBox_SelectedIndexChanged);
             // 
+            // CurrentSizeLabel
+            // 
+            this.CurrentSizeLabel.AutoSize = true;
+            this.CurrentSizeLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.CurrentSizeLabel.Location = new System.Drawing.Point(12, 121);
+            this.CurrentSizeLabel.Name = "CurrentSizeLabel";
+            this.CurrentSizeLabel.Size = new System.Drawing.Size(90, 13);
+            this.CurrentSizeLabel.TabIndex = 8;
+            this.CurrentSizeLabel.Text = "Current Size X: Y:";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(290, 150);
+            this.Controls.Add(this.CurrentSizeLabel);
             this.Controls.Add(this.saveAtComboBox);
             this.Controls.Add(this.saveAtLabel);
             this.Controls.Add(this.label1);
@@ -163,6 +175,7 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label saveAtLabel;
 		private System.Windows.Forms.ComboBox saveAtComboBox;
-	}
+        private System.Windows.Forms.Label CurrentSizeLabel;
+    }
 }
 

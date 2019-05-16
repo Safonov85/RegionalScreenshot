@@ -18,7 +18,7 @@ namespace RegionalScreeshot
 
         }
 
-        void RestoreDefault()
+        void RestoreDefaultPath()
         {
 
         }
