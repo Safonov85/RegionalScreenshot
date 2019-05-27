@@ -14,9 +14,12 @@ namespace RegionalScreenshot
 			PicFormatComboBox.SelectedIndex = 0;
 			saveAtComboBox.SelectedIndex = 1;
             //MainForm.DefaultBackColor = Color
-		}
+            UpdatePixelSizeInfo();
 
-		private void TakeSSButton_Click(object sender, EventArgs e)
+
+        }
+
+        private void TakeSSButton_Click(object sender, EventArgs e)
 		{
 			PrepareScreenShotMethod();
 		}
@@ -26,10 +29,16 @@ namespace RegionalScreenshot
 			this.Opacity = 0;
 			takeScreenShot.format = PicFormatComboBox.SelectedItem.ToString();
 			takeScreenShot.PutScreenshootOnScreen();
-			this.Opacity = 100;
+            UpdatePixelSizeInfo();
+            this.Opacity = 100;
 		}
 
-		private void trackBar1_Scroll(object sender, EventArgs e)
+        private void UpdatePixelSizeInfo()
+        {
+            CurrentSizeLabel.Text = "Current Size X: " + takeScreenShot.cursorSizeX.ToString() + " Y: " + takeScreenShot.cursorSizeY.ToString();
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
 		{
 			takeScreenShot.qualityAmount = trackBar1.Value;
 			QualityAmountLabel.Text = trackBar1.Value.ToString();

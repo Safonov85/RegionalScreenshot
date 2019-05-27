@@ -134,7 +134,7 @@
             // 
             this.CurrentSizeLabel.AutoSize = true;
             this.CurrentSizeLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.CurrentSizeLabel.Location = new System.Drawing.Point(12, 121);
+            this.CurrentSizeLabel.Location = new System.Drawing.Point(12, 102);
             this.CurrentSizeLabel.Name = "CurrentSizeLabel";
             this.CurrentSizeLabel.Size = new System.Drawing.Size(90, 13);
             this.CurrentSizeLabel.TabIndex = 8;

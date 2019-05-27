@@ -11,7 +11,7 @@ namespace RegionalScreenshot
 		public Int64 qualityAmount = 100L;
 		Form form;
 		bool ctrlDown = false;
-		int cursorSizeX, cursorSizeY;
+		public int cursorSizeX, cursorSizeY;
 		PictureBox pictureBox = new PictureBox();
 		public string format = ".jpg";
 		string manualTutorial = "Scroll (+ Ctrl) ( ← → ↑ ↓ )";
@@ -274,8 +274,8 @@ namespace RegionalScreenshot
 			//graphics.DrawEllipse(Pens.Blue, 0, 0, 50, 50);
 
 			// Text
-			graphics.DrawString(manualTutorial, new Font("Calibri", 20, FontStyle.Regular), Brushes.Black, 0, y - 50);
-			image.Save("cursor.bmp");
+			//graphics.DrawString(manualTutorial, new Font("Calibri", 20, FontStyle.Regular), Brushes.Black, 0, y - 50);
+			//image.Save("cursor.bmp");
 
 			return new Cursor(image.GetHicon());
 		}
