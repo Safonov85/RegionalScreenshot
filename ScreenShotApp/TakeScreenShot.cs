@@ -75,40 +75,6 @@ namespace RegionalScreenshot
 		private void form_KeyDown(object sender, KeyEventArgs e)
 		{
             CursorSizeChange(e);
-			//if (e.Control)
-			//{
-			//	ctrlDown = true;
-   //             manualTutorial = "Scroll + Ctrl ↑ ↓";
-   //             form.Cursor = CreateCursor(cursorSizeX, cursorSizeY);
-   //         }
-   //         if(e.KeyData == Keys.Up)
-   //         {
-   //             cursorSizeY += 20;
-   //             form.Cursor = CreateCursor(cursorSizeX, cursorSizeY);
-   //         }
-   //         if (e.KeyData == Keys.Down)
-   //         {
-   //             cursorSizeY -= 20;
-   //             if (cursorSizeY < 20)
-   //             {
-   //                 cursorSizeY = 20;
-   //             }
-   //             form.Cursor = CreateCursor(cursorSizeX, cursorSizeY);
-   //         }
-   //         if (e.KeyData == Keys.Right)
-   //         {
-   //             cursorSizeX -= 20;
-   //             if (cursorSizeX < 20)
-   //             {
-   //                 cursorSizeX = 20;
-   //             }
-   //             form.Cursor = CreateCursor(cursorSizeX, cursorSizeY);
-   //         }
-   //         if (e.KeyData == Keys.Left)
-   //         {
-   //             cursorSizeX += 20;
-   //             form.Cursor = CreateCursor(cursorSizeX, cursorSizeY);
-   //         }
         }
 
         private void CursorSizeChange(KeyEventArgs e)

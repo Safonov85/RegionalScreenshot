@@ -16,6 +16,7 @@ namespace RegionalScreenshot
             //MainForm.DefaultBackColor = Color
             UpdatePixelSizeInfo();
 
+            CreateSavePath();
 
         }
 
@@ -137,6 +138,22 @@ namespace RegionalScreenshot
                     takeScreenShot.savePath = Environment.GetFolderPath(System.Environment.SpecialFolder.DesktopDirectory);
                     saveAtComboBox.SelectedItem = "Desktop";
                 }
+            }
+        }
+
+        void CreateSavePath()
+        {
+            //string[] lines = { "First line", "Second line", "Third line" };
+            string path = "\\pathfolder";
+
+            // Set a variable to the Documents path.
+            string docPath = "";
+              
+
+            // Write the string array to a new file named "WriteLines.txt".
+            using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath, "pathSaveFolder.txt")))
+            {
+                    outputFile.WriteLine(path);
             }
         }
 	}
