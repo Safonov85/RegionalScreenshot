@@ -26,3 +26,13 @@ C:\Users\Mycomp\RegionalScreenshot\ScreenShotApp\obj\Debug\Regional Screenshot.c
 C:\Users\Mycomp\RegionalScreenshot\ScreenShotApp\obj\Debug\Regional Screenshot.csproj.CoreCompileInputs.cache
 C:\Users\Mycomp\RegionalScreenshot\ScreenShotApp\obj\Debug\Regional Screenshot.exe
 C:\Users\Mycomp\RegionalScreenshot\ScreenShotApp\obj\Debug\Regional Screenshot.pdb
+C:\Users\michael\RegionalScreenshot\ScreenShotApp\bin\Debug\Regional Screenshot.exe.config
+C:\Users\michael\RegionalScreenshot\ScreenShotApp\bin\Debug\Regional Screenshot.exe
+C:\Users\michael\RegionalScreenshot\ScreenShotApp\bin\Debug\Regional Screenshot.pdb
+C:\Users\michael\RegionalScreenshot\ScreenShotApp\obj\Debug\Regional Screenshot.csprojAssemblyReference.cache
+C:\Users\michael\RegionalScreenshot\ScreenShotApp\obj\Debug\RegionalScreenshot.MainForm.resources
+C:\Users\michael\RegionalScreenshot\ScreenShotApp\obj\Debug\RegionalScreeshot.Properties.Resources.resources
+C:\Users\michael\RegionalScreenshot\ScreenShotApp\obj\Debug\Regional Screenshot.csproj.GenerateResource.cache
+C:\Users\michael\RegionalScreenshot\ScreenShotApp\obj\Debug\Regional Screenshot.csproj.CoreCompileInputs.cache
+C:\Users\michael\RegionalScreenshot\ScreenShotApp\obj\Debug\Regional Screenshot.exe
+C:\Users\michael\RegionalScreenshot\ScreenShotApp\obj\Debug\Regional Screenshot.pdb
