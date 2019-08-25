@@ -178,23 +178,15 @@ namespace RegionalScreenshot
 				EncoderParameter myEncoderParameter = new EncoderParameter(myEncoder, qualityAmount);
 				myEncoderParameters.Param[0] = myEncoderParameter;
 
-                // temporary fix for GDI+ error issue
-                screen.Save("pictureJPG.jpg");
-
-                // THE REAL SAVE PATH CODE
-
-                //screen.Save(savePath + "\\" + DateTime.Now.ToShortDateString() + DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() +
-                //	DateTime.Now.Second.ToString() + "Quality_" + quality.ToString() + format, jpgEncoder, myEncoderParameters);
+                screen.Save(savePath + "\\" + DateTime.Now.ToString("yyyyMMdd") + DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() +
+                	DateTime.Now.Second.ToString() + "Quality_" + quality.ToString() + format, jpgEncoder, myEncoderParameters);
             }
-			else if (format == ".png")
+            else if (format == ".png")
 			{
-                // temporary fix for GDI+ error issue
-                screen.Save("picturePNG.png");
-
-				//screen.Save(savePath + "\\" + DateTime.Now.ToShortDateString() + DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() +
-				//	DateTime.Now.Second.ToString() + format, ImageFormat.Png);
-			}
-		}
+                screen.Save(savePath + "\\" + DateTime.Now.ToString("yyyyMMdd") + DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() +
+                	DateTime.Now.Second.ToString() + format, ImageFormat.Png);
+            }
+        }
 
 		public void PutScreenshootOnScreen()
 		{
