@@ -14,7 +14,7 @@ namespace RegionalScreenshot
 		public int cursorSizeX, cursorSizeY;
 		PictureBox pictureBox = new PictureBox();
 		public string format = ".jpg";
-		string manualTutorial = "Scroll (+ Ctrl) ( ← → ↑ ↓ )";
+		string manualTutorial = "Scroll (+ Hold Ctrl) ( ← → ↑ ↓ )";
 		public string savePath;
 
 		public TakeScreenShot()
@@ -62,7 +62,7 @@ namespace RegionalScreenshot
 			// Esc press EXIST!!!
 			if (e.KeyCode == Keys.Escape)
 			{
-				SaveGraphics();
+				//SaveGraphics();
 				form.Close();
 			}
 		}
@@ -82,7 +82,7 @@ namespace RegionalScreenshot
             if (e.Control)
             {
                 ctrlDown = true;
-                manualTutorial = "Scroll + Ctrl ↑ ↓";
+                manualTutorial = "Scroll + Hold Ctrl ↑ ↓";
                 form.Cursor = CreateCursor(cursorSizeX, cursorSizeY);
             }
             if (e.KeyData == Keys.Up)
@@ -280,7 +280,7 @@ namespace RegionalScreenshot
 			//graphics.DrawEllipse(Pens.Blue, 0, 0, 50, 50);
 
 			// Text
-			//graphics.DrawString(manualTutorial, new Font("Calibri", 20, FontStyle.Regular), Brushes.Black, 0, y - 50);
+			graphics.DrawString(manualTutorial, new Font("Calibri", 20, FontStyle.Regular), Brushes.Black, 0, y - 50);
 			//image.Save("cursor.bmp");
 
 			return new Cursor(image.GetHicon());
