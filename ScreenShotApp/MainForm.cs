@@ -16,7 +16,7 @@ namespace RegionalScreenshot
             //MainForm.DefaultBackColor = Color
             UpdatePixelSizeInfo();
 
-            CreateSavePath();
+            CreateSavePath("");
 
         }
 
@@ -131,6 +131,7 @@ namespace RegionalScreenshot
                 if (result == DialogResult.OK)
                 {
                     takeScreenShot.savePath = folderDialog.SelectedPath;
+                    CreateSavePath(folderDialog.SelectedPath);
                     saveAtComboBox.SelectedItem = "Other...";
                 }
                 else
@@ -141,10 +142,13 @@ namespace RegionalScreenshot
             }
         }
 
-        void CreateSavePath()
+        void CreateSavePath(string path)
         {
             //string[] lines = { "First line", "Second line", "Third line" };
-            string path = "\\pathfolder";
+            if(path == "")
+            {
+                path = "\\pathfolder";
+            }
 
             // Set a variable to the Documents path.
             string docPath = "";
