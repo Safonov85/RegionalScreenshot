@@ -49,6 +49,11 @@ namespace RegionalScreenshot
 			}
 		}
 
+        void AppleConvert()
+        {
+            // possible work around for Apple products/device
+        }
+
 		private void form_KeyUp(object sender, KeyEventArgs e)
 		{
 			// CTRL Down
