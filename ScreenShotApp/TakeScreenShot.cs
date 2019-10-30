@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Drawing.Imaging;
 using System.Diagnostics;
+using Microsoft.Win32;
 
 namespace RegionalScreenshot
 {
@@ -16,6 +17,9 @@ namespace RegionalScreenshot
 		public string format = ".jpg";
 		string manualTutorial = "Scroll (+ Hold Ctrl) ( ← → ↑ ↓ )";
 		public string savePath;
+
+        int width_4K = 3840;
+        int height_4K = 2160;
 
 		public TakeScreenShot()
 		{
@@ -195,11 +199,35 @@ namespace RegionalScreenshot
 
 		public void PutScreenshootOnScreen()
 		{
-			Bitmap screen = new Bitmap(SystemInformation.VirtualScreen.Width,
-							 SystemInformation.VirtualScreen.Height);
+            Bitmap screen;
+            if (Screen.PrimaryScreen.Bounds.Height > 1080)
+            {
+                screen = new Bitmap(width_4K, height_4K);
+            }
+            else
+            {
+                screen = new Bitmap(System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width,
+                             System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height);
+            }
+			
 			Graphics graphics = Graphics.FromImage(screen);
 
-			graphics.CopyFromScreen(SystemInformation.VirtualScreen.X,
+            //int currentDPI = (int)Registry.GetValue("HKEY_CURRENT_USER\\Control Panel\\Desktop", "LogPixels", 96);
+
+            //float scaleBy = 96 / currentDPI;
+
+            //int whateva = SystemInformation.VirtualScreen.X;
+
+            //int whateva2 = SystemInformation.WorkingArea.Size.Width;
+
+            //using (Graphics graphics1 = Graphics.FromHwnd(IntPtr.Zero))
+            //{
+            //    float dpiX = graphics1.DpiX;
+            //    float dpiY = graphics1.DpiY;
+            //    int wut = 0;
+            //}
+
+            graphics.CopyFromScreen(SystemInformation.VirtualScreen.X,
 							 SystemInformation.VirtualScreen.Y,
 							 0, 0, screen.Size);
 			string desktopPath = Environment.GetFolderPath(System.Environment.SpecialFolder.DesktopDirectory);
