@@ -7,10 +7,12 @@ namespace RegionalScreenshot
 	public partial class MainForm : Form
 	{
 		TakeScreenShot takeScreenShot = new TakeScreenShot();
+        public int whateva = 345;
 
 		public MainForm()
 		{
-			InitializeComponent();
+            
+            InitializeComponent();
 			PicFormatComboBox.SelectedIndex = 0;
 			saveAtComboBox.SelectedIndex = 1;
             //MainForm.DefaultBackColor = Color
@@ -160,5 +162,17 @@ namespace RegionalScreenshot
                     outputFile.WriteLine(path);
             }
         }
-	}
+
+        private void Screen4K_CheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Screen4K_CheckBox.Checked)
+            {
+                takeScreenShot.Screen4kCheck = true;
+            }
+            else
+            {
+                takeScreenShot.Screen4kCheck = false;
+            }
+        }
+    }
 }

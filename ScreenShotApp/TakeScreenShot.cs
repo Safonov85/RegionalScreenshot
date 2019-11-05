@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System.Drawing.Imaging;
 using System.Diagnostics;
 using Microsoft.Win32;
+using RegionalScreenshot;
 
 namespace RegionalScreenshot
 {
@@ -17,6 +18,8 @@ namespace RegionalScreenshot
 		public string format = ".jpg";
 		string manualTutorial = "Scroll (+ Hold Ctrl) ( ← → ↑ ↓ )";
 		public string savePath;
+        public bool Screen4kCheck = false;
+        //MainForm mainF = new MainForm();
 
         int width_4K = 3840;
         int height_4K = 2160;
@@ -171,11 +174,16 @@ namespace RegionalScreenshot
 			Bitmap screen = new Bitmap(cursorSizeX, cursorSizeY);
 			Graphics graphics = Graphics.FromImage(screen);
 
-			float screenStartX = cursorPosX - (screen.Size.Width / 2);
-			float screenStartY = cursorPosY - (screen.Size.Height / 2);
 
-			// Crops the Exact Region
-			graphics.CopyFromScreen((int)screenStartX, (int)screenStartY, 0, 0, screen.Size);
+            // original
+            float screenStartX = cursorPosX - (screen.Size.Width / 2);
+            float screenStartY = cursorPosY - (screen.Size.Height / 2);
+
+            //float screenStartX = cursorPosX;
+            //float screenStartY = cursorPosY;
+
+            // Crops the Exact Region
+            graphics.CopyFromScreen((int)screenStartX, (int)screenStartY, 0, 0, screen.Size);
 			
 			if (format == ".jpg")
 			{
@@ -228,7 +236,7 @@ namespace RegionalScreenshot
             //}
 
             graphics.CopyFromScreen(SystemInformation.VirtualScreen.X,
-							 SystemInformation.VirtualScreen.Y,
+                             SystemInformation.VirtualScreen.Y,
 							 0, 0, screen.Size);
 			string desktopPath = Environment.GetFolderPath(System.Environment.SpecialFolder.DesktopDirectory);
 
@@ -240,7 +248,15 @@ namespace RegionalScreenshot
 
 			EncoderParameter myEncoderParameter = new EncoderParameter(myEncoder, qualityAmount);
 			myEncoderParameters.Param[0] = myEncoderParameter;
-			CreateNewScreen(screen);
+            if (Screen4kCheck)
+            {
+                CreateNewScreen4k(screen);
+            }
+            else
+            {
+                CreateNewScreen(screen);
+            }
+			
 			graphics.Dispose();
 		}
 
@@ -270,13 +286,35 @@ namespace RegionalScreenshot
 
 			pictureBox.Image = picture;
 			pictureBox.Dock = DockStyle.Fill;
-			form.Controls.Add(pictureBox);
+            //pictureBox.Scale(new SizeF(6.2f, 6.2f));
+            //pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            form.Controls.Add(pictureBox);
 			form.Cursor = CreateCursor(cursorSizeX, cursorSizeY);
-			Debug.WriteLine(DateTime.Now.Second.ToString());
+			//Debug.WriteLine(DateTime.Now.Second.ToString());
 			form.FormBorderStyle = FormBorderStyle.None;
+            //form.Scale(new SizeF(5f, 5f));
+            //form.AutoScaleMode = AutoScaleMode.Dpi;
 			form.WindowState = FormWindowState.Maximized;
 			form.ShowDialog();
 		}
+
+        void CreateNewScreen4k(Image picture)
+        {
+            form.Text = "Screenshot Viewer";
+
+            pictureBox.Image = picture;
+            pictureBox.Dock = DockStyle.Fill;
+            //pictureBox.Scale(new SizeF(6.2f, 6.2f));
+            pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            form.Controls.Add(pictureBox);
+            form.Cursor = CreateCursor(cursorSizeX, cursorSizeY);
+            //Debug.WriteLine(DateTime.Now.Second.ToString());
+            form.FormBorderStyle = FormBorderStyle.None;
+            //form.Scale(new SizeF(5f, 5f));
+            //form.AutoScaleMode = AutoScaleMode.Dpi;
+            form.WindowState = FormWindowState.Maximized;
+            form.ShowDialog();
+        }
 
 		// Test
 		void SaveGraphics()
