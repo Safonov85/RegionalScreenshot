@@ -46,8 +46,15 @@ namespace RegionalScreenshot
 			MouseEventArgs me = (MouseEventArgs)e;
 			if (me.Button == MouseButtons.Left)
 			{
-				TakeCurrentScreenshoot(Control.MousePosition.X, Control.MousePosition.Y, format, qualityAmount);
-				form.Close();
+                if (true)
+                {
+                    TakeCurrentScreenshoot(Control.MousePosition.X, Control.MousePosition.Y, format, qualityAmount);
+                }
+                else
+                {
+                    TakeCurrentScreenshoot4k(Control.MousePosition.X, Control.MousePosition.Y, format, qualityAmount);
+                }
+                form.Close();
 				return;
 			}
 			if (me.Button == MouseButtons.Right)
@@ -205,7 +212,43 @@ namespace RegionalScreenshot
             }
         }
 
-		public void PutScreenshootOnScreen()
+        public void TakeCurrentScreenshoot4k(int cursorPosX, int cursorPosY, string format, Int64 quality)
+        {
+            Bitmap screen = new Bitmap(cursorSizeX, cursorSizeY);
+            Graphics graphics = Graphics.FromImage(screen);
+
+
+            // original
+            float screenStartX = cursorPosX;
+            float screenStartY = cursorPosY;
+
+            //float screenStartX = cursorPosX;
+            //float screenStartY = cursorPosY;
+
+            // Crops the Exact Region
+            graphics.CopyFromScreen((int)screenStartX, (int)screenStartY, cursorPosX, cursorPosY, screen.Size);
+
+            if (format == ".jpg")
+            {
+                ImageCodecInfo jpgEncoder = GetEncoder(ImageFormat.Jpeg);
+                System.Drawing.Imaging.Encoder myEncoder =
+                    System.Drawing.Imaging.Encoder.Quality;
+                EncoderParameters myEncoderParameters = new EncoderParameters(1);
+
+                EncoderParameter myEncoderParameter = new EncoderParameter(myEncoder, qualityAmount);
+                myEncoderParameters.Param[0] = myEncoderParameter;
+
+                screen.Save(savePath + "\\" + DateTime.Now.ToString("yyyyMMdd") + DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() +
+                    DateTime.Now.Second.ToString() + "Quality_" + quality.ToString() + format, jpgEncoder, myEncoderParameters);
+            }
+            else if (format == ".png")
+            {
+                screen.Save(savePath + "\\" + DateTime.Now.ToString("yyyyMMdd") + DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() +
+                    DateTime.Now.Second.ToString() + format, ImageFormat.Png);
+            }
+        }
+
+        public void PutScreenshootOnScreen()
 		{
             Bitmap screen;
             if (Screen.PrimaryScreen.Bounds.Height > 1080)
