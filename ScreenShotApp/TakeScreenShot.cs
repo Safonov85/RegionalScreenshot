@@ -248,6 +248,8 @@ namespace RegionalScreenshot
             }
         }
 
+        
+
         public void PutScreenshootOnScreen()
 		{
             Bitmap screen;
@@ -399,5 +401,29 @@ namespace RegionalScreenshot
 
 			return new Cursor(image.GetHicon());
 		}
+
+        public void TakeCurrentSH_OnWindow(int cursorPosX, int cursorPosY, string format, Int64 quality)
+        {
+            Bitmap screen = new Bitmap(cursorSizeX, cursorSizeY);
+            Graphics graphics = Graphics.FromImage(screen);
+
+
+            // original
+            float screenStartX = cursorPosX - (screen.Size.Width / 2);
+            float screenStartY = cursorPosY - (screen.Size.Height / 2);
+
+            //float screenStartX = cursorPosX;
+            //float screenStartY = cursorPosY;
+
+            // Crops the Exact Region
+            graphics.CopyFromScreen((int)screenStartX, (int)screenStartY, 0, 0, screen.Size);
+            
+
+            ImageCodecInfo jpgEncoder = GetEncoder(ImageFormat.Jpeg);
+            System.Drawing.Imaging.Encoder myEncoder =
+                System.Drawing.Imaging.Encoder.Quality;
+            EncoderParameters myEncoderParameters = new EncoderParameters(1);
+
+        }
 	}
 }
