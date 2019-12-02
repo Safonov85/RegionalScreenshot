@@ -34,6 +34,7 @@ namespace RegionalScreenshot
 			form.Click += new System.EventHandler(form_Click);
 			form.KeyUp += new KeyEventHandler(form_KeyUp);
 			form.KeyPreview = true;
+            form.MouseMove += new MouseEventHandler(form_MouseMove);
 			savePath = Environment.GetFolderPath(System.Environment.SpecialFolder.DesktopDirectory);
 
 			// pictureBox CLICK WORKING!!!!!!!!!!
@@ -41,7 +42,12 @@ namespace RegionalScreenshot
 			//pictureBox.
 		}
 
-		private void picturebox_Click(object sender, EventArgs e)
+        private void form_MouseMove(object sender, MouseEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void picturebox_Click(object sender, EventArgs e)
 		{
 			MouseEventArgs me = (MouseEventArgs)e;
 			if (me.Button == MouseButtons.Left)
