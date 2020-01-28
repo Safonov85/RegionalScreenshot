@@ -10,6 +10,7 @@ namespace RegionalScreenshot
 {
 	public class TakeScreenShot
 	{
+        // Variables
 		public Int64 qualityAmount = 100L;
 		Form form;
 		bool ctrlDown = false;
@@ -24,6 +25,7 @@ namespace RegionalScreenshot
         int width_4K = 3840;
         int height_4K = 2160;
 
+        
 		public TakeScreenShot()
 		{
 			cursorSizeX = 400;
@@ -42,6 +44,8 @@ namespace RegionalScreenshot
 			//pictureBox.
 		}
 
+
+        // Methods
         private void form_MouseMove(object sender, MouseEventArgs e)
         {
             throw new NotImplementedException();

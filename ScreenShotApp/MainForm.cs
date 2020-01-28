@@ -6,6 +6,7 @@ namespace RegionalScreenshot
 {
 	public partial class MainForm : Form
 	{
+        // Variables
 		TakeScreenShot takeScreenShot = new TakeScreenShot();
         public int whateva = 345;
 
@@ -22,6 +23,8 @@ namespace RegionalScreenshot
 
         }
 
+
+        // Methods
         private void TakeSSButton_Click(object sender, EventArgs e)
 		{
 			PrepareScreenShotMethod();
