@@ -341,14 +341,10 @@ namespace RegionalScreenshot
 
 			pictureBox.Image = picture;
 			pictureBox.Dock = DockStyle.Fill;
-            //pictureBox.Scale(new SizeF(6.2f, 6.2f));
-            //pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+
             form.Controls.Add(pictureBox);
 			form.Cursor = CreateCursor(cursorSizeX, cursorSizeY);
-			//Debug.WriteLine(DateTime.Now.Second.ToString());
 			form.FormBorderStyle = FormBorderStyle.None;
-            //form.Scale(new SizeF(5f, 5f));
-            //form.AutoScaleMode = AutoScaleMode.Dpi;
 			form.WindowState = FormWindowState.Maximized;
 			form.ShowDialog();
 		}
@@ -359,14 +355,13 @@ namespace RegionalScreenshot
 
             pictureBox.Image = picture;
             pictureBox.Dock = DockStyle.Fill;
-            //pictureBox.Scale(new SizeF(6.2f, 6.2f));
+
+            // If 4K !!!!
             pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+
             form.Controls.Add(pictureBox);
             form.Cursor = CreateCursor(cursorSizeX, cursorSizeY);
-            //Debug.WriteLine(DateTime.Now.Second.ToString());
             form.FormBorderStyle = FormBorderStyle.None;
-            //form.Scale(new SizeF(5f, 5f));
-            //form.AutoScaleMode = AutoScaleMode.Dpi;
             form.WindowState = FormWindowState.Maximized;
             form.ShowDialog();
         }
