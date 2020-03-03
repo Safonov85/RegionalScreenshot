@@ -8,6 +8,11 @@ namespace RegionalScreeshot
 {
     public class SavePicPath
     {
+        public SavePicPath()
+        {
+
+        }
+
         void CreatePath()
         {
 
@@ -19,6 +24,11 @@ namespace RegionalScreeshot
         }
 
         void RestoreDefaultPath()
+        {
+
+        }
+
+        void DeletePath()
         {
 
         }
