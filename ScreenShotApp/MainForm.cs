@@ -4,6 +4,9 @@ using System.Windows.Forms;
 
 namespace RegionalScreenshot
 {
+
+        // ATM, app only works for max res 1080p properly
+
 	public partial class MainForm : Form
 	{
         // Variables
