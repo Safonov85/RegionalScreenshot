@@ -6,6 +6,7 @@ namespace RegionalScreenshot
 {
 
         // ATM, app only works for max res 1080p properly
+	// Need to make proper settings for 4K beta version
 
 	public partial class MainForm : Form
 	{
